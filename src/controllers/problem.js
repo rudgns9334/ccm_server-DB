@@ -9,7 +9,7 @@ router.get('/problems', async(req, res, next) => {
     
 });
 
-router.post('/', (req, res) => {
+router.post('/problems', (req, res) => {
     let body = req.body;
 
     db.problems.create({
