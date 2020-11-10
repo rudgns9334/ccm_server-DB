@@ -10,27 +10,18 @@ const compression = require('compression');
 const cors = require('cors');
 const routes = require('./routes');
 const ProblemRouter = require('./controllers/problem');
+const MentoRouter = require('./controllers/mentoring');
+const bodyParser = require('body-parser');
 
 const logger = require('./utils/logger');
-
+const n2r = require('./routes/n2r');
+const api = require('./routes/index');
 
 const app = express();
 
+app.enable('trust proxy');
 app.use(cors());
 app.options('*', cors());
-
-const api = require('./routes/index');
-
-app.use('/users',api);
-
-app.use(ProblemRouter);
-
-
-app.enable('trust proxy');
-
-const n2r = require('./routes/n2r');
-
-app.use('/n2r',n2r);
 
 
 
@@ -45,6 +36,8 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(ProblemRouter);
+app.use(MentoRouter);
 app.use(cookieParser());
 app.use(xss());
 app.use(compression());
@@ -54,9 +47,20 @@ app.use(session({ secret: 'ccm', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
 app.use(express.static(path.join(__dirname, '..', '..', 'client', 'build')));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(routes);
+app.use('/users',api);
+app.use('/n2r',n2r);
+
+
+
+
+
 
 app.use(function (err, req, res, next) {
   res.status(500).json({ code: 500, data: { msg: "Internal Server Error", err: err }});

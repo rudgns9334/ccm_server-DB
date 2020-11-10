@@ -10,6 +10,7 @@ module.exports = {
         name: 'prims',
         professor:'jh',
         try: 3,
+        content: 'gggg'
         // createdAt: faker.date.recent(),
         // updatedAt: faker.date.recent()
         },
@@ -18,6 +19,7 @@ module.exports = {
         name: 'dfs',
         professor:'ha',
         try: 5,
+        content: '이잉'
         // createdAt: faker.date.recent(),
         // updatedAt: faker.date.recent()
         },
@@ -26,6 +28,7 @@ module.exports = {
         name: 'bfs',
         professor:'ta',
         try: 7,
+        content: '살려줘'
         // createdAt: faker.date.recent(),
         // updatedAt: faker.date.recent()
         },
@@ -34,6 +37,7 @@ module.exports = {
         name: 'hill',
         professor:'gagag',
         try: 8,
+        content: '우오에엥'
         // createdAt: faker.date.recent(),
         // updatedAt: faker.date.recent()
         },
@@ -42,6 +46,7 @@ module.exports = {
           name: 'sibal',
           professor:'hhhh',
           try: 10,
+          content: '후어어어어어어엉'
           // createdAt: faker.date.recent(),
           // updatedAt: faker.date.recent()
           }

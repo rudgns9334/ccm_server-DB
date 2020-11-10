@@ -1,15 +1,10 @@
 
 module.exports = (sequelize, DataTypes) => {
   const problem = sequelize.define('problems', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
     number: {
       type: DataTypes.INTEGER,
         unique: true,
+        primaryKey: true,
         allowNull: false
     },
     name: {
@@ -22,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     }, 
     try: {
       type: DataTypes.INTEGER
+    },
+    content: {
+      type: DataTypes.STRING(1000)
     },
     // createdAt: {
     //   allowNull: false,

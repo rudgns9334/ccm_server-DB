@@ -2,15 +2,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('problems', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
       number: {
         type: Sequelize.INTEGER,
         unique: true,
+        primaryKey: true,
         allowNull: false
       },
       name: {
@@ -23,6 +18,9 @@ module.exports = {
       },
       try: {
         type: Sequelize.INTEGER
+      },
+      content: {
+        type: Sequelize.STRING(1000),
       },
       // createdAt: {
       //   allowNull: false,
