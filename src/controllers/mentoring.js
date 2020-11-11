@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('./../models/');
 const logger = require('./../utils/logger');
 
-router.get('/mentorings', async(req, res, next) => {
+router.get('/mentorings', (req, res, next) => {
     db.mentorings.findAll({
         attributes: ['id','number', 'name','content']
     }).then( result => {
@@ -12,7 +12,7 @@ router.get('/mentorings', async(req, res, next) => {
     });
 });
 
-router.post('/mentorings', (req, res) => {
+router.post('/mentorings', async(req, res) => {
     console.log(req.body);
 
     db.mentorings.create({
