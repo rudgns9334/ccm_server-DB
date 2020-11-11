@@ -12,21 +12,22 @@ router.get('/mentorings', async(req, res, next) => {
     });
 });
 
-router.post('/mentorings', async(req, res) => {
-    console.log(req.headers);
+router.post('/mentorings', (req, res) => {
     console.log(req.body);
 
     db.mentorings.create({
         number: req.body.number,
         name: req.body.name,
         content: req.body.content,
+    
     })
     .then( result => {
         logger.info("데이터 추가 완료");
-        res.redirect('/problems');
+        res.redirect('/mentorings');
     })
     .catch( err => {
         logger.info(err);
+        console.log(err);
     })
     });
     

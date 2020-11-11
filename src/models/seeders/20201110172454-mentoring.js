@@ -8,8 +8,8 @@ const mentoring = [...Array(20)].map((mentoring, index) => ({
   number: number[index],
   name: faker.name.lastName(),
   content: faker.internet.email(),
-  createdAt: faker.date.recent(),
-  updatedAt: faker.date.recent()
+  // createdAt: faker.date.recent(),
+  // updatedAt: faker.date.recent()
 }));
 
 module.exports = {
