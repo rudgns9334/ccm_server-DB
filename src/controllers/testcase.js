@@ -3,9 +3,12 @@ const router = express.Router();
 const db = require('./../models/');
 const logger = require('./../utils/logger');
 
-router.get('/testcases', (req, res, next) => {
+router.get('/testcases/:number', (req, res, next) => {
+    var num = req.params.number;
+    console.log(num);
     db.testcase.findAll({
-        attributes: ['number', 'input','output']
+        //attributes: ['number', 'input','output'],
+        where:{number : num}
     }).then( result => {
         res.json(result);
         

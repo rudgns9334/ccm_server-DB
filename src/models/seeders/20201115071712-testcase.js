@@ -12,6 +12,11 @@ module.exports = {
           number: 2,
           input: '23 21',
           output: '44'
+        },
+        {
+          number: 1,
+          input: '1 2',
+          output: '3'
         }
       ], {});
   },
