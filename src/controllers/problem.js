@@ -6,7 +6,7 @@ const jjss = express.json();
 
 
 router.get('/problems', async(req, res, next) => {
-    db.problems.findAll().then( result => {
+    db.problem.findAll().then( result => {
         res.json(result);
         
     });
@@ -16,7 +16,7 @@ router.post('/problems', async(req, res) => {
     console.log(req.headers);
     console.log(req.body);
 
-    db.problems.create({
+    db.problem.create({
         number: req.body.number,
         name: req.body.name,
         professor: req.body.professor,

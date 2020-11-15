@@ -11,6 +11,7 @@ const cors = require('cors');
 const routes = require('./routes');
 const ProblemRouter = require('./controllers/problem');
 const MentoRouter = require('./controllers/mentoring');
+const TCRouter = require('./controllers/testcase');
 const bodyParser = require('body-parser');
 
 const logger = require('./utils/logger');
@@ -38,6 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(ProblemRouter);
 app.use(MentoRouter);
+app.use(TCRouter);
 app.use(cookieParser());
 app.use(xss());
 app.use(compression());

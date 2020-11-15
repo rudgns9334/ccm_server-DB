@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const mentoring = sequelize.define('mentorings', {
+  const mentoring = sequelize.define('mentoring', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(20)
     },
     content: {
-      type: DataTypes.STRING(1000)
+      type: DataTypes.STRING(10000)
     },
     // createdAt: {
     //   allowNull: false,
@@ -51,6 +51,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   mentoring.associate = function(models) {
     // associations can be defined here
+    // mentoring.belongTo(model.problem, {
+    //   foreignKey: "number"
+    // })
   };
   return mentoring;
 };

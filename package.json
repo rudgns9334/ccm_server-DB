@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "client": "cd client && yarn start",
+    "client": "cd .. && cd .. && cd G-K_C_C_M && yarn start",
     "server": "cross-env NODE_ENV=production node app.js",
     "dev": "nodemon app.js",
+    "go":"concurrently --kill-others-on-fail \"yarn dev\" \"yarn client\"",
     "test": "newman run ./tests/api-tests.json -e ./tests/env.json",
     "db:drop": "sequelize db:drop",
     "db:create": "sequelize db:create",
