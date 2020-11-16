@@ -10,7 +10,7 @@ module.exports = {
         name: '피보나치 함수',
         professor:'허정훈',
         try: 3,
-        content: 'N이 주어졌을때, N까지의 피보나치 계산을 완료하는 프로그램을 작성하시오'
+        content: 'N이 주어졌을때, N번까지의 피보나치 계산을 완료하는 프로그램을 작성하시오. 단, 첫째항은 0이다.'
         // createdAt: faker.date.recent(),
         // updatedAt: faker.date.recent()
         },
