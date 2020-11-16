@@ -6,7 +6,7 @@ cd ccm_server-DB
 
 yarn
 
-copy .env env
+copy .env env //copy가 안되면 cp .env env로 실행
 
 yarn db:create
 
