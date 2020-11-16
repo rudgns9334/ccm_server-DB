@@ -4,7 +4,7 @@ module.exports = {
     return queryInterface.createTable('problems', {
       number: {
         type: Sequelize.INTEGER,
-        unique: true,
+        autoIncrement: true,
         primaryKey: true,
         allowNull: false
       },

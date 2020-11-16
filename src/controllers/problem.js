@@ -17,10 +17,10 @@ router.post('/problems', async(req, res) => {
     console.log(req.body);
 
     db.problem.create({
-        number: req.body.number,
         name: req.body.name,
         professor: req.body.professor,
         try: req.body.try,
+        content: req.body.content
     })
     .then( result => {
         logger.info("데이터 추가 완료");

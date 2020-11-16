@@ -6,7 +6,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('problems', [
       {
-        number: 1,
         name: '피보나치 함수',
         professor:'허정훈',
         try: 3,
@@ -15,7 +14,6 @@ module.exports = {
         // updatedAt: faker.date.recent()
         },
         {
-        number: 2,
         name: 'A+B',
         professor:'유태준',
         try: 5,
@@ -24,7 +22,6 @@ module.exports = {
         // updatedAt: faker.date.recent()
         },
         {
-        number: 3,
         name: '두 수 비교하기',
         professor:'정경훈',
         try: 7,
@@ -33,7 +30,6 @@ module.exports = {
         // updatedAt: faker.date.recent()
         },
         {
-        number: 4,
         name: '구구단',
         professor:'허정훈',
         try: 8,
@@ -42,7 +38,6 @@ module.exports = {
         // updatedAt: faker.date.recent()
         },
         {
-          number: 5,
           name: '정수 N개의 합',
           professor:'유태준',
           try: 10,
